@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<style>
+    
+    #first{
+        position: absolute;
+        top: 100px;
+        left: 400px;
+        height:60px;
+        width: 60px;
+    
+        border-radius: 30px;
+        background-color:red;
+        
+        
+        
+        
+    }
+    #first.move{
+    animation: changewidth 5s infinite, colorchange 20s infinite;
+    animation-direction: normal;
+        
+    }
+    #second{
+        position: absolute;
+        top: 100px;
+        left: 600px;
+        width:60px;
+        height:60px;
+        border-radius: 30px;
+        background:yellow;
+        
+    }
+    #second.move{
+        animation:changeheight 5s infinite,colorchange1 20s infinite;
+        animation-direction: normal;
+    
+    }
+    #third{
+        position: absolute;
+        top: 300px;
+        left: 400px;
+        width:60px;
+        height:60px;
+        border-radius: 30px;
+        background:green;
+        
+        
+    }
+    #third.move{
+        animation: changetop 5s infinite,colorchange2 20s infinite;
+        animation-direction: normal;
+        
+    }
+    #fourth{
+        position: absolute;
+        top: 300px;
+        left: 600px;
+        width:60px;
+        height:60px;
+        border-radius: 30px;
+        background:skyblue;
+        
+    }
+    #fourth.move{
+        animation: changeleft 5s infinite,colorchange3 20s infinite;
+    animation-direction: normal;
+        
+        
+        
+        
+    }
+    .start{
+        background:#078282ff;
+        position:fixed;
+        top:400px;
+        left:400px;
+        color: white;
+        cursor: pointer;
+        
+    }
+    .stop{
+        background:#078282ff;
+        position:fixed;
+        top:400px;
+        left:600px;
+        color: white;
+        cursor: pointer;
+    }
+    
+
+    @keyframes changewidth{
+       0%{width: 60px;}
+       50%{width: 260px;}
+       100%{width: 60px;}
+    }
+    @keyframes changeleft{
+        0%{left: 600px; width: 60px;}
+        50%{left:400px; width:260px;}
+        100%{left: 600px; width:60px;}
+    }
+    @keyframes changetop{
+        0%{top: 300px; height: 60px;}
+        50%{top:100px; height:260px;}
+        100%{top: 300px; height:60px;}
+    
+    }
+    @keyframes changeheight{
+        0%{height: 60px;}
+        50%{height: 260px;}
+       100%{height: 60px;}
+    }
+    @keyframes colorchange{
+        0%{background-color: red;}
+        25%{
+            background-color: yellow;
+        }
+        50%{background-color: skyblue;}
+        75%{background-color: green;}
+    }
+    @keyframes colorchange1{
+        0%{background-color: yellow;}
+        25%{
+            background-color: skyblue;
+        }
+        50%{background-color:green;}
+        75%{background-color: red;}
+    }
+    @keyframes colorchange2{
+        0%{background-color: skyblue;}
+        25%{
+            background-color:green;
+        }
+        50%{background-color:red;}
+        75%{background-color: yellow;}
+    }
+    @keyframes colorchange3{
+        0%{background-color: green;}
+        25%{
+            background-color:red;
+        }
+        50%{background-color:yellow;}
+        75%{background-color:skyblue;}
+    }
+    
+</style>
+    </head>
+    <body>
+        <div id="first"></div>
+        <div id="second"></div>
+<div id="third"></div>
+<div id="fourth"></div>
+<button class="start" onclick="animation()">Start</button>
+<button class="stop"onclick="reset()">Stop</button>
+<script type="text/javascript">
+         
+    
+   function animation(){
+
+    console.log('clicked')
+        const first=document.getElementById('first');
+        first.classList.add('move');
+        const second=document.getElementById('second');
+        second.classList.add('move');
+        const third=document.getElementById('third');
+        third.classList.add('move');
+        const fourth=document.getElementById('fourth');
+        fourth.classList.add('move');
+        
+    }
+    function reset(){
+        const first=document.getElementById('first');
+        first.classList.remove('move');
+        const second=document.getElementById('second');
+        second.classList.remove('move');
+        const third=document.getElementById('third');
+        third.classList.remove('move');
+        const fourth=document.getElementById('fourth');
+        fourth.classList.remove('move')
+    }
+    </script>
+</body>
+
+</html>
